@@ -1,3 +1,5 @@
+image: node:4.2.2
+
 job 0:
   stage: .pre
   script: echo "make something useful before build stage"
