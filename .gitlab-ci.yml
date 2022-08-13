@@ -50,3 +50,14 @@ npm:
             - node_modules/
             - public/css/
             - public/js/
+            
+phpunit:
+    image: composer:latest
+    stage: test
+
+    # List of jobs from which it will download the artifacts.
+    dependencies:
+        - composer
+
+    script:
+        - phpunit --coverage-text --colors=never
