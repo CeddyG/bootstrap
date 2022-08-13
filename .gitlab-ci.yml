@@ -2,7 +2,10 @@
 
 job 0:
   stage: .pre
-  script: echo "make something useful before build stage"
+  script: 
+    - echo "make something useful before build stage"
+    - pwd
+    - ls -l
 
 build-job:
   stage: build
