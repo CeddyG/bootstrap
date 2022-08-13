@@ -5,8 +5,6 @@ job 0:
   script: echo "make something useful before build stage"
 
 build-job:
-  tags:
-    - ruby
   stage: build
   script:
     - echo "Hello, $GITLAB_USER_LOGIN!"
