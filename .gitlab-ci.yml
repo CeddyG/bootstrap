@@ -7,11 +7,13 @@ composer:
         - composer install --prefer-dist --no-ansi --no-interaction --no-progress --no-scripts
         - cp .env.example .env
         - php artisan key:generate
-      
-    # Define what to output from the job.
-    paths:
-        - vendor/
-        - .env
+        
+    artifacts:
+        # Define what to output from the job.
+        paths:
+            - vendor/
+            - .env
+        
     cache:
         # The variable CI_COMMIT_REF_SLUG 
         # refers to the slug of the branch.
@@ -44,7 +46,6 @@ npm:
     # Provide the other jobs of the pipeline with
     # the node dependencies and the compiled assets.
     artifacts:
-        expire_in: 1 month
         paths:
             - node_modules/
             - public/css/
