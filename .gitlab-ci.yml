@@ -60,4 +60,4 @@ phpunit:
         - composer
 
     script:
-        - phpunit --coverage-text --colors=never
+        - ./vendor/bin/phpunit --coverage-text --colors=never
