@@ -1,31 +1,51 @@
 # image: node:4.2.2
 
-job 0:
-  stage: .pre
-  script: 
-    - echo "make something useful before build stage"
-    - pwd
-    - ls -l
+composer:
+    image: composer:latest
+    stage: build
+    script:
+        - composer install --prefer-dist --no-ansi --no-interaction --no-progress --no-scripts
+        - cp .env.example .env
+        - php artisan key:generate
+      
+    # Define what to output from the job.
+    paths:
+        - vendor/
+        - .env
+    cache:
+        # The variable CI_COMMIT_REF_SLUG 
+        # refers to the slug of the branch.
+        # For example: `master` for the master branch.
+        # We use the `composer` suffix to avoid conflicts with
+        # the `npm` cache that we'll define next.
+        key: ${CI_COMMIT_REF_SLUG}-composer
 
-build-job:
-  stage: build
-  script:
-    - echo "Hello, $GITLAB_USER_LOGIN!"
+        # Define what to cache.
+        paths:
+            - vendor/
+          
+npm:
+    image: node:latest
+    # Same stage as `composer` so that they run in parallel.
+    stage: build
 
-test-job1:
-  stage: test
-  script:
-    - echo "This job tests something"
+    # Cache the `node_modules` folder
+    # using the `npm` suffix on the key.
+    cache:
+        key: ${CI_COMMIT_REF_SLUG}-npm
+        paths:
+            - node_modules/
 
-test-job2:
-  stage: test
-  script:
-    - echo "This job tests something, but takes more time than test-job1."
-    - echo "After the echo commands complete, it runs the sleep command for 20 seconds"
-    - echo "which simulates a test that runs 20 seconds longer than test-job1"
-    - sleep 20
+    # Install and compile.
+    script:
+        - npm install
+        - npm run production
 
-deploy-prod:
-  stage: deploy
-  script:
-    - echo "This job deploys something from the $CI_COMMIT_BRANCH branch."
+    # Provide the other jobs of the pipeline with
+    # the node dependencies and the compiled assets.
+    artifacts:
+        expire_in: 1 month
+        paths:
+            - node_modules/
+            - public/css/
+            - public/js/
