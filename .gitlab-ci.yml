@@ -74,6 +74,11 @@ phpunit:
   
 staging:
     stage: deploy
+    
+    # List of jobs from which it will download the artifacts.
+    dependencies:
+        - composer
+        - npm
   
     # Pseudocode describing roughly what we're trying to achive
     script:
