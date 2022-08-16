@@ -48,8 +48,7 @@ npm:
     artifacts:
         paths:
             - node_modules/
-            - public/css/
-            - public/js/
+            - public/
             
 phpunit:
     image: composer:latest
@@ -84,12 +83,8 @@ staging:
     script:
         # Reuse a template by calling `*reference`
         - *init_ssh
-        - ls -l
-        - cd public
-        - ls -l
         - ssh ceddy@192.168.56.4 "git clone ssh://git@gitlab.dock:2222/clara/bootstrap.git bootstrap/staging"
-        - scp -r public/css/* ceddy@192.168.56.4:bootstrap/staging
-        - scp -r public/js/* ceddy@192.168.56.4:bootstrap/staging
+        - scp -r public/* ceddy@192.168.56.4:bootstrap/staging
         - scp -r vendor/* ceddy@192.168.56.4:bootstrap/staging
 
     # Define an GitLab environment.
