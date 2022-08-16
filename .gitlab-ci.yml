@@ -61,3 +61,42 @@ phpunit:
 
     script:
         - ./vendor/bin/phpunit --coverage-text --colors=never
+
+# Add a `.` in front of a job to make it hidden.
+# Add a `&reference` to make it a reusable template.
+# Note that we don't have dashes anymore.
+.init_ssh: &init_ssh |
+    eval $(ssh-agent -s)
+    echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add - > /dev/null
+    mkdir -p ~/.ssh
+    chmod 700 ~/.ssh
+  
+staging:
+    stage: deploy
+  
+    # Pseudocode describing roughly what we're trying to achive
+    script:
+        # Reuse a template by calling `*reference`
+        - *init_ssh
+        - ssh-keyscan 192.168.56.4 >> ~/.ssh/known_hosts
+        - chmod 644 ~/.ssh/known_hosts
+        - ssh ceddy@192.168.56.4
+        - mkdir bootstrap
+        - cd bootstrap
+        - git clone git@gitlab.dock:clara/bootstrap.git staging
+        - exit
+        - scp -r public/css/* ceddy@192.168.56.4:bootstrap/staging
+        - scp -r public/js/* ceddy@192.168.56.4:bootstrap/staging
+        - scp -r vendor/* ceddy@192.168.56.4:bootstrap/staging
+
+    # Define an GitLab environment.
+    # This makes GitLab aware of your latest deployments
+    # and provides a button to check out the provided url.
+    environment:
+        name: staging
+        url: http://staging.bootstrap.dock
+    
+    # (Optional) Only deploy if we're in the master branch
+    # Other branches will only build and test.
+    only:
+        - master
