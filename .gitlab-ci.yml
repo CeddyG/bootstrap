@@ -86,7 +86,7 @@ staging:
         - ssh ceddy@192.168.56.4 "git clone ssh://git@gitlab.dock:2222/clara/bootstrap.git bootstrap/staging && mkdir bootstrap/staging/vendor"
         - scp -r public/* ceddy@192.168.56.4:bootstrap/staging/public
         - scp -r vendor/* ceddy@192.168.56.4:bootstrap/staging/vendor
-        - ssh ceddy@192.168.56.4 "cp bootstrap/staging/laradock/.env.example bootstrap/staging/laradock/.env && docker-compose -p staging.bootstrap -f bootstrap/staging/laradock/ up -d nginx mysql phpmyadmin"
+        - ssh ceddy@192.168.56.4 "cd bootstrap/staging/laradock && cp .env.example .env && docker compose -p staging.bootstrap up -d nginx mysql phpmyadmin"
 
     # Define an GitLab environment.
     # This makes GitLab aware of your latest deployments
