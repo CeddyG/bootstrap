@@ -79,7 +79,7 @@ staging:
     script:
         # Reuse a template by calling `*reference`
         - *init_ssh
-        - ssh ceddy@192.168.56.4 "git clone git@gitlab.dock:clara/bootstrap.git bootstrap/staging"
+        - ssh ceddy@192.168.56.4 "git clone ssh://git@gitlab.dock:2222/clara/bootstrap.git bootstrap/staging"
         - scp -r public/css/* ceddy@192.168.56.4:bootstrap/staging
         - scp -r public/js/* ceddy@192.168.56.4:bootstrap/staging
         - scp -r vendor/* ceddy@192.168.56.4:bootstrap/staging
