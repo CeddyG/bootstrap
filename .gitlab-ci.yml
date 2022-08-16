@@ -83,7 +83,7 @@ staging:
     script:
         # Reuse a template by calling `*reference`
         - *init_ssh
-        - ssh ceddy@192.168.56.4 "git clone ssh://git@gitlab.dock:2222/clara/bootstrap.git bootstrap/staging"
+        - ssh ceddy@192.168.56.4 "git clone ssh://git@gitlab.dock:2222/clara/bootstrap.git bootstrap/staging && mkdir bootstrap/staging/vendor"
         - scp -r public/* ceddy@192.168.56.4:bootstrap/staging/public
         - scp -r vendor/* ceddy@192.168.56.4:bootstrap/staging/vendor
         - ssh ceddy@192.168.56.4 "cd bootstrap/staging/laradock && cp .env.example .env && docker-compose -p staging.bootstrap up -d nginx mysql phpmyadmin"
