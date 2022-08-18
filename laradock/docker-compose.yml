@@ -287,7 +287,7 @@ services:
       networks:
         - frontend
         - backend
-        - web
+        - default
       labels:
         - "traefik.enable=true"
         - "traefik.docker.network=web"
@@ -329,7 +329,7 @@ services:
       networks:
         - frontend
         - backend
-        - web
+        - default
       labels:
         - "traefik.enable=true"
         - "traefik.docker.network=web"
