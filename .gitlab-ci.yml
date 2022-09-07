@@ -88,7 +88,7 @@ staging:
         - scp -r vendor/* ceddy@192.168.56.4:bootstrap/staging/vendor
         - ssh ceddy@192.168.56.4 "cd bootstrap/staging/laradock && cp .env.example .env && docker compose -p staging-bootstrap up -d nginx mysql phpmyadmin"
         - ssh ceddy@192.168.56.4 "cd bootstrap/staging && cp .env.example .env"
-        - ssh ceddy@192.168.56.4 "docker exec -it staging-bootstrap-workspace-1 php artisan key:generate"
+        - ssh ceddy@192.168.56.4 "docker exec -i staging-bootstrap-workspace-1 php artisan key:generate"
 
     # Define an GitLab environment.
     # This makes GitLab aware of your latest deployments
@@ -100,4 +100,36 @@ staging:
     # (Optional) Only deploy if we're in the master branch
     # Other branches will only build and test.
     only:
-        - master
+        - /^release//.*$/
+        
+feature:
+    stage: deploy
+    
+    # List of jobs from which it will download the artifacts.
+    dependencies:
+        - composer
+        - npm
+  
+    # Pseudocode describing roughly what we're trying to achive
+    script:
+        # Reuse a template by calling `*reference`
+        - *init_ssh
+        - ssh ceddy@192.168.56.4 "git clone ssh://git@gitlab.dock:2222/clara/bootstrap.git bootstrap/$CI_COMMIT_BRANCH && mkdir bootstrap/$CI_COMMIT_BRANCH/vendor"
+        - ssh ceddy@192.168.56.4 "cd bootstrap/$CI_COMMIT_BRANCH && git checkout $CI_COMMIT_BRANCH"
+        - scp -r public/* ceddy@192.168.56.4:bootstrap/$CI_COMMIT_BRANCH/public
+        - scp -r vendor/* ceddy@192.168.56.4:bootstrap/$CI_COMMIT_BRANCH/vendor
+        - ssh ceddy@192.168.56.4 "cd bootstrap/$CI_COMMIT_BRANCH/laradock && cp .env.example .env && docker compose -p feature-bootstrap up -d nginx mysql phpmyadmin"
+        - ssh ceddy@192.168.56.4 "cd bootstrap/$CI_COMMIT_BRANCH && cp .env.example .env"
+        - ssh ceddy@192.168.56.4 "docker exec -i feature-bootstrap-workspace-1 php artisan key:generate"
+
+    # Define an GitLab environment.
+    # This makes GitLab aware of your latest deployments
+    # and provides a button to check out the provided url.
+    environment:
+        name: $CI_COMMIT_BRANCH
+        url: http://feature.bootstrap.dock
+    
+    # (Optional) Only deploy if we're in the master branch
+    # Other branches will only build and test.
+    only:
+        - /^feature//.*$/
