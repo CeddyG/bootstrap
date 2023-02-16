@@ -158,7 +158,7 @@
             This is an alert !!!
         </x-alert>
         <x-alert type="success">
-            This is an alert !!!
+            This is an gay alert 2 !!!
         </x-alert>
         <x-alert type="danger">
             This is an alert !!!
