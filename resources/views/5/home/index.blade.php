@@ -353,5 +353,61 @@
             </x-button-group>            
         </x-layout.col>
     </x-layout.row>
+
+    <x-layout.row class="mt-5">
+        <x-layout.col size="12">
+            <h2>Spinner</h2>
+             <x-spinner color="primary"/>
+             <x-spinner color="secondary"/>
+             <x-spinner color="success"/>
+             <x-spinner color="danger"/>
+             <x-spinner color="warning"/>
+             <x-spinner color="info"/>
+             <x-spinner color="light"/>
+             <x-spinner color="dark"/>
+             <br/>
+             {{--Version Colorée--}}
+             <x-spinner color="" type="grow"/>
+             <x-spinner color="primary" type="grow"/>
+             <x-spinner color="secondary" type="grow"/>
+             <x-spinner color="success" type="grow"/>
+             <x-spinner color="danger" type="grow"/>
+             <x-spinner color="warning" type="grow"/>
+             <x-spinner color="info" type="grow"/>
+             <x-spinner color="light" type="grow"/>
+             <x-spinner color="dark" type="grow"/>
+             <br/>
+
+             {{--Version Small--}}
+             <x-spinner color="primary" size="sm"/>
+             <x-spinner color="secondary" size="sm"/>
+             <x-spinner color="success" size="sm"/>
+             <x-spinner color="danger" size="sm"/>
+             <x-spinner color="warning" size="sm"/>
+             <x-spinner color="info" size="sm"/>
+             <x-spinner color="light" size="sm"/>
+             <x-spinner color="dark" size="sm"/>
+             <br/>
+
+             <x-spinner color="" type="grow" size="sm" class="toto"/>
+             <x-spinner color="primary" type="grow" size="sm"/>
+             <x-spinner color="secondary" type="grow" size="sm"/>
+             <x-spinner color="success" type="grow" size="sm"/>
+             <x-spinner color="danger" type="grow" size="sm"/>
+             <x-spinner color="warning" type="grow" size="sm"/>
+             <x-spinner color="info" type="grow" size="sm"/>
+             <x-spinner color="light" type="grow" size="sm"/>
+             <x-spinner color="dark" type="grow" size="sm"/>
+             <br/>
+
+
+
+        </x-layout.col>
+    </x-layout.row>
+
+
+
+
+
 </x-layout.container>
 @endsection
