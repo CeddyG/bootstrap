@@ -399,15 +399,55 @@
              <x-spinner color="light" type="grow" size="sm"/>
              <x-spinner color="dark" type="grow" size="sm"/>
              <br/>
-
-
-
+             
         </x-layout.col>
     </x-layout.row>
-
-
-
-
-
+    
+    <x-layout.row class="mt-5">
+        <x-layout.col size="12">
+            <h2>Card</h2>
+            
+            <x-card style="width: 18rem;">
+                <svg class="card-img-top" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+                <x-card.body>
+                    <h5 class="card-title">Card title</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </x-card.body>
+            </x-card>
+            
+            <x-card class="mt-3" style="width: 18rem;">
+                <x-card.header>
+                    Featured
+                </x-card.header>
+                <x-card.body>
+                    <h5 class="card-title">Card title</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </x-card.body>
+                <x-card.footer>
+                    2 days ago
+                </x-card.footer>
+            </x-card>
+            
+            <x-card class="mt-3" style="max-width: 540px;">
+                <x-layout.row class="g-0">
+                    <x-layout.col size="4">
+                        <svg class="card-img-top" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+                    </x-layout.col>
+                    <x-layout.col size="8">
+                        <x-card.body>
+                            <h5 class="card-title">Card title</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </x-card.body>
+                    </x-layout.col>
+                </x-layout.row>
+            </x-card>
+        </x-layout.col>
+    </x-layout.row>
 </x-layout.container>
 @endsection
