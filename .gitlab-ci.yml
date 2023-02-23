@@ -132,4 +132,4 @@ feature:
     # (Optional) Only deploy if we're in the master branch
     # Other branches will only build and test.
     only:
-        - /^feature//.*$/
+        - /^feature/.*$/
