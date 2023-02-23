@@ -449,5 +449,13 @@
             </x-card>
         </x-layout.col>
     </x-layout.row>
+    
+    <x-layout.row class="mt-5">
+        <x-layout.col size="12">
+            <h2>BTN Close</h2>
+            
+            <x-btn-close />
+        </x-layout.col>
+    </x-layout.row>
 </x-layout.container>
 @endsection
