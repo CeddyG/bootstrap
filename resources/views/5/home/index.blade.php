@@ -151,28 +151,28 @@
 
         <h2>Alert</h2>
 
-        <x-alert type="primary">
+        <x-alert color="primary">
             This is an alert !!!
         </x-alert>
-        <x-alert type="secondary">
+        <x-alert color="secondary">
             This is an alert !!!
         </x-alert>
-        <x-alert type="success">
+        <x-alert color="success">
             This is an gay alert 2 !!!
         </x-alert>
-        <x-alert type="danger">
+        <x-alert color="danger">
             This is an alert !!!
         </x-alert>
-        <x-alert type="warning">
+        <x-alert color="warning">
             This is an alert !!!
         </x-alert>
-        <x-alert type="info">
+        <x-alert color="info">
             This is an alert !!!
         </x-alert>
-        <x-alert type="light">
+        <x-alert color="light">
             This is an alert !!!
         </x-alert>
-        <x-alert type="dark">
+        <x-alert color="dark">
             This is an alert !!!
         </x-alert>
 
@@ -315,30 +315,30 @@
         <x-layout.col size="12">
             <h2>Buttons</h2>
             
-            <x-button type="primary" disabled>Primary</x-button>
-            <x-button type="secondary">Secondary</x-button>
-            <x-button type="success">Success</x-button>
-            <x-button type="danger">Danger</x-button>
-            <x-button type="warning" class="text-dark">Warning</x-button>
-            <x-button type="info" class="text-dark">Info</x-button>
-            <x-button type="light" class="text-dark">Light</x-button>
-            <x-button type="dark">Dark</x-button>
+            <x-button color="primary" disabled>Primary</x-button>
+            <x-button color="secondary">Secondary</x-button>
+            <x-button color="success">Success</x-button>
+            <x-button color="danger">Danger</x-button>
+            <x-button color="warning" class="text-dark">Warning</x-button>
+            <x-button color="info" class="text-dark">Info</x-button>
+            <x-button color="light" class="text-dark">Light</x-button>
+            <x-button color="dark">Dark</x-button>
             
             <h3 class="h4 mt-3">Outline</h3>
             
-            <x-button type="primary" outline>Primary</x-button>
-            <x-button type="secondary" outline>Secondary</x-button>
-            <x-button type="success" outline>Success</x-button>
-            <x-button type="danger" outline>Danger</x-button>
-            <x-button type="warning" outline class="text-dark">Warning</x-button>
-            <x-button type="info" outline class="text-dark">Info</x-button>
-            <x-button type="light" outline class="text-dark">Light</x-button>
-            <x-button type="dark" outline>Dark</x-button>
+            <x-button color="primary" outline>Primary</x-button>
+            <x-button color="secondary" outline>Secondary</x-button>
+            <x-button color="success" outline>Success</x-button>
+            <x-button color="danger" outline>Danger</x-button>
+            <x-button color="warning" outline class="text-dark">Warning</x-button>
+            <x-button color="info" outline class="text-dark">Info</x-button>
+            <x-button color="light" outline class="text-dark">Light</x-button>
+            <x-button color="dark" outline>Dark</x-button>
             
             <h3 class="h4 mt-3">Size</h3>
             
-            <x-button type="primary" size="sm">Primary</x-button>
-            <x-button type="primary" size="lg">Primary</x-button>
+            <x-button color="primary" size="sm">Primary</x-button>
+            <x-button color="primary" size="lg">Primary</x-button>
         </x-layout.col>
     </x-layout.row>
     
@@ -347,9 +347,9 @@
             <h2>Button group</h2>
             
             <x-button-group>
-                <x-button type="primary">Primary</x-button>
-                <x-button type="secondary" outline>Secondary</x-button>
-                <x-button type="success">Success</x-button>
+                <x-button color="primary">Primary</x-button>
+                <x-button color="secondary" outline>Secondary</x-button>
+                <x-button color="success">Success</x-button>
             </x-button-group>            
         </x-layout.col>
     </x-layout.row>
@@ -447,6 +447,24 @@
                     </x-layout.col>
                 </x-layout.row>
             </x-card>
+        </x-layout.col>
+    </x-layout.row>
+    
+    <x-layout.row class="mt-5">
+        <x-layout.col size="6">
+            <h2>Carousel</h2>
+            
+            <x-carousel>
+                <x-carousel.item class="active">
+                    <img width="100%" src="{{ asset('images/space-1.jpg') }}" />
+                </x-carousel.item>
+                <x-carousel.item>
+                    <img width="100%" src="{{ asset('images/space-2.jpg') }}" />
+                </x-carousel.item>
+                <x-carousel.item>
+                    <img width="100%" src="{{ asset('images/space-3.jpg') }}" />
+                </x-carousel.item>
+            </x-carousel>
         </x-layout.col>
     </x-layout.row>
     

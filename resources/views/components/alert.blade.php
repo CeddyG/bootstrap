@@ -1,5 +1,5 @@
-@props(['type' => 'info', 'message'])
+@props(['color' => 'info', 'message'])
 
-<div {{ $attributes->merge(['class' => 'alert alert-'.$type]) }} role="alert">
+<div {{ $attributes->merge(['class' => 'alert alert-'.$color]) }} role="alert">
     {{ $slot }}
 </div>
