@@ -528,7 +528,52 @@
                     <a class="dropdown-item" href="#">Something else here</a>
                 </x-dropdown.item>                
             </x-dropdown>
+        </x-layout.col>
+    </x-layout.row>
+    
+    <x-layout.row class="mt-5">
+        <x-layout.col size="12">
+            <h2>List group</h2>
             
+            <x-list-group>
+                <x-list-group.item>
+                    An item
+                </x-list-group.item>
+                <x-list-group.item>
+                    Another item
+                </x-list-group.item>
+                <x-list-group.item>
+                    Something else here
+                </x-list-group.item>                
+            </x-list-group>
+            
+            <h3 class="h4 mt-3">Flush</h3>
+            
+            <x-list-group flush>
+                <x-list-group.item>
+                    An item
+                </x-list-group.item>
+                <x-list-group.item>
+                    Another item
+                </x-list-group.item>
+                <x-list-group.item>
+                    Something else here
+                </x-list-group.item>                
+            </x-list-group>
+            
+            <h3 class="h4 mt-3">Numbered</h3>
+            
+            <x-list-group numbered>
+                <x-list-group.item>
+                    An item
+                </x-list-group.item>
+                <x-list-group.item class="bg-primary">
+                    Another item
+                </x-list-group.item>
+                <x-list-group.item>
+                    Something else here
+                </x-list-group.item>                
+            </x-list-group>
         </x-layout.col>
     </x-layout.row>
 </x-layout.container>
