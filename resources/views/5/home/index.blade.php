@@ -475,5 +475,61 @@
             <x-btn-close />
         </x-layout.col>
     </x-layout.row>
+    
+    <x-layout.row class="mt-5">
+        <x-layout.col size="12">
+            <h2>Dropdown</h2>
+            
+            <x-dropdown>
+                <x-slot name="heading">
+                    Dropdown button
+                </x-slot>
+                <x-dropdown.item>
+                    <a class="dropdown-item" href="#">Action</a>
+                </x-dropdown.item>
+                <x-dropdown.item>
+                    <a class="dropdown-item" href="#">Another action</a>
+                </x-dropdown.item>
+                <x-dropdown.item>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </x-dropdown.item>                
+            </x-dropdown>
+            
+            <h3 class="h4 mt-3">Outline</h3>
+            
+            <x-dropdown color="success" outline>
+                <x-slot name="heading">
+                    Dropdown button
+                </x-slot>
+                <x-dropdown.item>
+                    <a class="dropdown-item" href="#">Action</a>
+                </x-dropdown.item>
+                <x-dropdown.item>
+                    <a class="dropdown-item" href="#">Another action</a>
+                </x-dropdown.item>
+                <x-dropdown.item>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </x-dropdown.item>                
+            </x-dropdown>
+            
+            <h3 class="h4 mt-3">Size</h3>
+            
+            <x-dropdown color="danger" size="lg">
+                <x-slot name="heading" class="text-uppercase">
+                    Dropdown button
+                </x-slot>
+                <x-dropdown.item>
+                    <a class="dropdown-item" href="#">Action</a>
+                </x-dropdown.item>
+                <x-dropdown.item class="bg-primary">
+                    <a class="dropdown-item" href="#">Another action</a>
+                </x-dropdown.item>
+                <x-dropdown.item>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </x-dropdown.item>                
+            </x-dropdown>
+            
+        </x-layout.col>
+    </x-layout.row>
 </x-layout.container>
 @endsection
