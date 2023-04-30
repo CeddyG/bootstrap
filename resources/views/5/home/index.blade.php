@@ -576,5 +576,283 @@
             </x-list-group>
         </x-layout.col>
     </x-layout.row>
+    
+    <x-layout.row class="mt-5">
+        <x-layout.col size="12">
+            <h2>Modal</h2>
+            <x-modal class="d-block position-static" style="height: auto; opacity: 1;">
+                <x-modal.header>
+                    <h4 class="modal-title">Modal title</h4>
+                    <x-btn-close data-bs-dismiss="modal" />
+                </x-modal.header>
+                <x-modal.body>
+                    <p>Modal body text goes here.</p>
+                </x-modal.body>
+                <x-modal.footer>
+                    <x-button color="secondary" data-bs-dismiss="modal">Close</x-button>
+                    <x-button color="primary">Save change</x-button>
+                </x-modal.footer>                
+            </x-modal>
+            
+            <h3 class="h4 mt-3">With button</h3>
+            
+            <x-modal>
+                <x-slot name="button" color="primary" size="sm" outline>
+                    Click me !!
+                </x-slot>
+                <x-modal.header>
+                    <h4 class="modal-title">Modal title</h4>
+                    <x-btn-close data-bs-dismiss="modal" />
+                </x-modal.header>
+                <x-modal.body>
+                    <p>Modal body text goes here.</p>
+                </x-modal.body>
+                <x-modal.footer>
+                    <x-button color="secondary" data-bs-dismiss="modal">Close</x-button>
+                    <x-button color="primary">Save change</x-button>
+                </x-modal.footer>                
+            </x-modal>
+            
+            <h3 class="h4 mt-3">Static backdrop</h3>
+            
+            <x-modal static-backdrop>
+                <x-slot name="button" color="danger">
+                    Click me !!
+                </x-slot>
+                <x-modal.header>
+                    <h4 class="modal-title">Modal title</h4>
+                    <x-btn-close data-bs-dismiss="modal" />
+                </x-modal.header>
+                <x-modal.body>
+                    <p>Modal body text goes here.</p>
+                </x-modal.body>
+                <x-modal.footer>
+                    <x-button color="secondary" data-bs-dismiss="modal">Close</x-button>
+                    <x-button color="primary">Save change</x-button>
+                </x-modal.footer>                
+            </x-modal>
+            
+            <h3 class="h4 mt-3">Dialog scrollable</h3>
+            
+            <x-modal>
+                <x-slot name="button" color="primary">
+                    Auto scrollabe
+                </x-slot>
+                <x-modal.header>
+                    <h4 class="modal-title">Modal title</h4>
+                    <x-btn-close data-bs-dismiss="modal" />
+                </x-modal.header>
+                <x-modal.body>
+                    <p>Cras ipsum dolor sit amet, consectetur adipiscing elit. Nam porta quis sapien vel congue. Fusce lectus risus, pharetra at velit sit amet, ultrices ultricies elit. Aenean convallis nisl id odio laoreet euismod. Suspendisse tellus diam, eleifend et sagittis placerat, tincidunt eu enim. Pellentesque eget lorem eu dui lacinia lobortis. Suspendisse dapibus purus quis dolor ornare convallis in quis felis. Aliquam sed lectus a dui facilisis cursus at nec nulla. Quisque vitae faucibus nulla, at facilisis ipsum.</p>
+
+                    <p>Cras semper convallis neque. Donec dapibus elementum placerat. Curabitur venenatis tincidunt dolor, non tincidunt nunc rhoncus sed. Morbi enim orci, aliquet elementum eros finibus, dignissim commodo tellus. Suspendisse potenti. Cras commodo tristique turpis, id accumsan nulla efficitur sed. Donec sit amet viverra velit, non vulputate nisi.</p>
+                    
+                    <p>Aliquam feugiat dui sit amet risus euismod feugiat. Etiam malesuada aliquet ipsum eu fermentum. Nulla ornare lectus sed nisi faucibus, sed laoreet urna interdum. Nullam sit amet vehicula purus, eu consectetur orci. Sed elementum orci et nisl ultricies finibus. Nunc nisl arcu, malesuada eu lacus ac, lacinia lacinia ex. Vivamus eu porta ligula. Proin sapien lectus, efficitur a efficitur ac, dapibus quis elit. Suspendisse et tempor leo. Praesent pulvinar dolor in risus maximus efficitur. Integer porta sapien non velit bibendum, in laoreet ante congue. Nam pretium metus nec tortor vulputate mattis.</p>
+                </x-modal.body>
+                <x-modal.footer>
+                    <x-button color="secondary" data-bs-dismiss="modal">Close</x-button>
+                    <x-button color="primary">Save change</x-button>
+                </x-modal.footer>                
+            </x-modal>
+            
+            <x-modal dialog-scrollable>
+                <x-slot name="button" color="primary">
+                    Dialog scrollable
+                </x-slot>
+                <x-modal.header>
+                    <h4 class="modal-title">Modal title</h4>
+                    <x-btn-close data-bs-dismiss="modal" />
+                </x-modal.header>
+                <x-modal.body>
+                    <p>Cras ipsum dolor sit amet, consectetur adipiscing elit. Nam porta quis sapien vel congue. Fusce lectus risus, pharetra at velit sit amet, ultrices ultricies elit. Aenean convallis nisl id odio laoreet euismod. Suspendisse tellus diam, eleifend et sagittis placerat, tincidunt eu enim. Pellentesque eget lorem eu dui lacinia lobortis. Suspendisse dapibus purus quis dolor ornare convallis in quis felis. Aliquam sed lectus a dui facilisis cursus at nec nulla. Quisque vitae faucibus nulla, at facilisis ipsum.</p>
+
+                    <p>Cras semper convallis neque. Donec dapibus elementum placerat. Curabitur venenatis tincidunt dolor, non tincidunt nunc rhoncus sed. Morbi enim orci, aliquet elementum eros finibus, dignissim commodo tellus. Suspendisse potenti. Cras commodo tristique turpis, id accumsan nulla efficitur sed. Donec sit amet viverra velit, non vulputate nisi.</p>
+                    
+                    <p>Aliquam feugiat dui sit amet risus euismod feugiat. Etiam malesuada aliquet ipsum eu fermentum. Nulla ornare lectus sed nisi faucibus, sed laoreet urna interdum. Nullam sit amet vehicula purus, eu consectetur orci. Sed elementum orci et nisl ultricies finibus. Nunc nisl arcu, malesuada eu lacus ac, lacinia lacinia ex. Vivamus eu porta ligula. Proin sapien lectus, efficitur a efficitur ac, dapibus quis elit. Suspendisse et tempor leo. Praesent pulvinar dolor in risus maximus efficitur. Integer porta sapien non velit bibendum, in laoreet ante congue. Nam pretium metus nec tortor vulputate mattis.</p>
+                </x-modal.body>
+                <x-modal.footer>
+                    <x-button color="secondary" data-bs-dismiss="modal">Close</x-button>
+                    <x-button color="primary">Save change</x-button>
+                </x-modal.footer>                
+            </x-modal>
+            
+            <h3 class="h4 mt-3">Vertically centered</h3>
+            
+            <x-modal centered>
+                <x-slot name="button" color="danger">
+                    Click me !!
+                </x-slot>
+                <x-modal.header>
+                    <h4 class="modal-title">Modal title</h4>
+                    <x-btn-close data-bs-dismiss="modal" />
+                </x-modal.header>
+                <x-modal.body>
+                    <p>Modal body text goes here.</p>
+                </x-modal.body>
+                <x-modal.footer>
+                    <x-button color="secondary" data-bs-dismiss="modal">Close</x-button>
+                    <x-button color="primary">Save change</x-button>
+                </x-modal.footer>                
+            </x-modal>
+            
+            <h3 class="h4 mt-3">Size</h3>
+            
+            <x-modal size="xl">
+                <x-slot name="button">
+                    Extra large
+                </x-slot>
+                <x-modal.header>
+                    <h4 class="modal-title">Modal title</h4>
+                    <x-btn-close data-bs-dismiss="modal" />
+                </x-modal.header>
+                <x-modal.body>
+                    <p>Modal body text goes here.</p>
+                </x-modal.body>
+                <x-modal.footer>
+                    <x-button color="secondary" data-bs-dismiss="modal">Close</x-button>
+                    <x-button color="primary">Save change</x-button>
+                </x-modal.footer>                
+            </x-modal>
+            
+            <x-modal size="lg">
+                <x-slot name="button">
+                    Large
+                </x-slot>
+                <x-modal.header>
+                    <h4 class="modal-title">Modal title</h4>
+                    <x-btn-close data-bs-dismiss="modal" />
+                </x-modal.header>
+                <x-modal.body>
+                    <p>Modal body text goes here.</p>
+                </x-modal.body>
+                <x-modal.footer>
+                    <x-button color="secondary" data-bs-dismiss="modal">Close</x-button>
+                    <x-button color="primary">Save change</x-button>
+                </x-modal.footer>                
+            </x-modal>
+            
+            <x-modal size="sm">
+                <x-slot name="button">
+                    Small
+                </x-slot>
+                <x-modal.header>
+                    <h4 class="modal-title">Modal title</h4>
+                    <x-btn-close data-bs-dismiss="modal" />
+                </x-modal.header>
+                <x-modal.body>
+                    <p>Modal body text goes here.</p>
+                </x-modal.body>
+                <x-modal.footer>
+                    <x-button color="secondary" data-bs-dismiss="modal">Close</x-button>
+                    <x-button color="primary">Save change</x-button>
+                </x-modal.footer>                
+            </x-modal>
+            
+            <h3 class="h4 mt-3">Fullscreen</h3>
+            
+            <x-modal fullscreen>
+                <x-slot name="button">
+                    Fullscreen
+                </x-slot>
+                <x-modal.header>
+                    <h4 class="modal-title">Modal title</h4>
+                    <x-btn-close data-bs-dismiss="modal" />
+                </x-modal.header>
+                <x-modal.body>
+                    <p>Modal body text goes here.</p>
+                </x-modal.body>
+                <x-modal.footer>
+                    <x-button color="secondary" data-bs-dismiss="modal">Close</x-button>
+                    <x-button color="primary">Save change</x-button>
+                </x-modal.footer>                
+            </x-modal>
+            
+            <x-modal fullscreen-below="sm">
+                <x-slot name="button">
+                    Fullscreen below SM
+                </x-slot>
+                <x-modal.header>
+                    <h4 class="modal-title">Modal title</h4>
+                    <x-btn-close data-bs-dismiss="modal" />
+                </x-modal.header>
+                <x-modal.body>
+                    <p>Modal body text goes here.</p>
+                </x-modal.body>
+                <x-modal.footer>
+                    <x-button color="secondary" data-bs-dismiss="modal">Close</x-button>
+                    <x-button color="primary">Save change</x-button>
+                </x-modal.footer>                
+            </x-modal>
+            
+            <x-modal fullscreen-below="md">
+                <x-slot name="button">
+                    Fullscreen below MD
+                </x-slot>
+                <x-modal.header>
+                    <h4 class="modal-title">Modal title</h4>
+                    <x-btn-close data-bs-dismiss="modal" />
+                </x-modal.header>
+                <x-modal.body>
+                    <p>Modal body text goes here.</p>
+                </x-modal.body>
+                <x-modal.footer>
+                    <x-button color="secondary" data-bs-dismiss="modal">Close</x-button>
+                    <x-button color="primary">Save change</x-button>
+                </x-modal.footer>                
+            </x-modal>
+            
+            <x-modal fullscreen-below="lg">
+                <x-slot name="button">
+                    Fullscreen below LG
+                </x-slot>
+                <x-modal.header>
+                    <h4 class="modal-title">Modal title</h4>
+                    <x-btn-close data-bs-dismiss="modal" />
+                </x-modal.header>
+                <x-modal.body>
+                    <p>Modal body text goes here.</p>
+                </x-modal.body>
+                <x-modal.footer>
+                    <x-button color="secondary" data-bs-dismiss="modal">Close</x-button>
+                    <x-button color="primary">Save change</x-button>
+                </x-modal.footer>                
+            </x-modal>
+            
+            <x-modal fullscreen-below="xl">
+                <x-slot name="button">
+                    Fullscreen below XL
+                </x-slot>
+                <x-modal.header>
+                    <h4 class="modal-title">Modal title</h4>
+                    <x-btn-close data-bs-dismiss="modal" />
+                </x-modal.header>
+                <x-modal.body>
+                    <p>Modal body text goes here.</p>
+                </x-modal.body>
+                <x-modal.footer>
+                    <x-button color="secondary" data-bs-dismiss="modal">Close</x-button>
+                    <x-button color="primary">Save change</x-button>
+                </x-modal.footer>                
+            </x-modal>
+            
+            <x-modal fullscreen-below="xxl">
+                <x-slot name="button">
+                    Fullscreen below XXL
+                </x-slot>
+                <x-modal.header>
+                    <h4 class="modal-title">Modal title</h4>
+                    <x-btn-close data-bs-dismiss="modal" />
+                </x-modal.header>
+                <x-modal.body>
+                    <p>Modal body text goes here.</p>
+                </x-modal.body>
+                <x-modal.footer>
+                    <x-button color="secondary" data-bs-dismiss="modal">Close</x-button>
+                    <x-button color="primary">Save change</x-button>
+                </x-modal.footer>                
+            </x-modal>
+            
+        </x-layout.col>
+    </x-layout.row>
 </x-layout.container>
 @endsection

@@ -1,3 +1,3 @@
-<div {{ $attributes->class(['accordion', 'accordion-flush' => $flush]) }} @isset($idAccordion)id="{{ $idAccordion }}"@endisset>
+<div {{ $attributes->class(['accordion', 'accordion-flush' => $flush])->merge(['id' => $idAccordion ?: null]) }}>
     {{ $slot }}
 </div>
