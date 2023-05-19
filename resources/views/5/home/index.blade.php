@@ -484,14 +484,14 @@
                 <x-slot name="heading">
                     Dropdown button
                 </x-slot>
-                <x-dropdown.item>
-                    <a class="dropdown-item" href="#">Action</a>
+                <x-dropdown.item href="#">
+                    Action
                 </x-dropdown.item>
-                <x-dropdown.item>
-                    <a class="dropdown-item" href="#">Another action</a>
+                <x-dropdown.item href="#">
+                    Another action
                 </x-dropdown.item>
-                <x-dropdown.item>
-                    <a class="dropdown-item" href="#">Something else here</a>
+                <x-dropdown.item href="#">
+                    Something else here
                 </x-dropdown.item>                
             </x-dropdown>
             
@@ -501,14 +501,14 @@
                 <x-slot name="heading">
                     Dropdown button
                 </x-slot>
-                <x-dropdown.item>
-                    <a class="dropdown-item" href="#">Action</a>
+                <x-dropdown.item href="#">
+                    Action
                 </x-dropdown.item>
-                <x-dropdown.item>
-                    <a class="dropdown-item" href="#">Another action</a>
+                <x-dropdown.item href="#">
+                    Another action
                 </x-dropdown.item>
-                <x-dropdown.item>
-                    <a class="dropdown-item" href="#">Something else here</a>
+                <x-dropdown.item href="#">
+                    Something else here
                 </x-dropdown.item>                
             </x-dropdown>
             
@@ -518,14 +518,14 @@
                 <x-slot name="heading" class="text-uppercase">
                     Dropdown button
                 </x-slot>
-                <x-dropdown.item>
-                    <a class="dropdown-item" href="#">Action</a>
+                <x-dropdown.item href="#">
+                    Action
                 </x-dropdown.item>
-                <x-dropdown.item class="bg-primary">
-                    <a class="dropdown-item" href="#">Another action</a>
+                <x-dropdown.item href="#" class="bg-primary">
+                    Another action
                 </x-dropdown.item>
-                <x-dropdown.item>
-                    <a class="dropdown-item" href="#">Something else here</a>
+                <x-dropdown.item href="#">
+                    Something else here
                 </x-dropdown.item>                
             </x-dropdown>
         </x-layout.col>
@@ -850,7 +850,192 @@
                     <x-button color="secondary" data-bs-dismiss="modal">Close</x-button>
                     <x-button color="primary">Save change</x-button>
                 </x-modal.footer>                
-            </x-modal>
+            </x-modal>            
+        </x-layout.col>
+    </x-layout.row>
+    
+    <x-layout.row class="mt-5">
+        <x-layout.col size="12">
+            <h2>Navbar</h2>
+            
+            <x-navbar>
+                <x-slot name="brand" url="{{ url('/') }}">
+                    Brand
+                </x-slot>
+                
+                <x-nav.item id="toto">
+                    <x-nav.link href="#" active>
+                        Home
+                    </x-nav.link>
+                </x-nav.item>
+                
+                <x-nav.item>
+                    <x-nav.link href="#" id="tata">
+                        Link
+                    </x-nav.link>
+                </x-nav.item>
+                
+                <x-nav.item dropdown>
+                    <x-nav.link href="#">
+                        Dropdown
+                    </x-nav.link>
+                    
+                    <x-dropdown.menu>
+                        <x-dropdown.item href="#">
+                            Action
+                        </x-dropdown.item>
+                        <x-dropdown.item href="#">
+                            Another action
+                        </x-dropdown.item>
+                        <x-dropdown.divider />
+                        <x-dropdown.item href="#">
+                            Something else here
+                        </x-dropdown.item>
+                    </x-dropdown.menu>
+                </x-nav.item>
+                
+                <x-nav.item>
+                    <x-nav.link href="#" disabled>
+                        Disabled
+                    </x-nav.link>
+                </x-nav.item>
+            </x-navbar>            
+        </x-layout.col>
+    </x-layout.row>
+    
+    <x-layout.row class="mt-5">
+        <x-layout.col size="12">
+            <h2>Navs & tabs</h2>
+            
+            <x-nav>
+                <x-nav.item>
+                    <x-nav.link href="#" active>
+                        Active
+                    </x-nav.link>
+                </x-nav.item>
+                
+                <x-nav.item>
+                    <x-nav.link href="#" id="nav-link">
+                        Link
+                    </x-nav.link>
+                </x-nav.item>
+                
+                <x-nav.item>
+                    <x-nav.link href="#">
+                        Link
+                    </x-nav.link>
+                </x-nav.item>
+                
+                <x-nav.item>
+                    <x-nav.link href="#" disabled>
+                        Disabled
+                    </x-nav.link>
+                </x-nav.item>
+            </x-nav>
+            
+            <x-nav tabs class="mt-4">
+                <x-nav.item>
+                    <x-nav.link href="#" active>
+                        Active
+                    </x-nav.link>
+                </x-nav.item>
+                
+                <x-nav.item>
+                    <x-nav.link href="#" id="nav-link">
+                        Link
+                    </x-nav.link>
+                </x-nav.item>
+                
+                <x-nav.item>
+                    <x-nav.link href="#">
+                        Link
+                    </x-nav.link>
+                </x-nav.item>
+                
+                <x-nav.item>
+                    <x-nav.link href="#" disabled>
+                        Disabled
+                    </x-nav.link>
+                </x-nav.item>
+            </x-nav>
+            
+            <x-nav pills class="mt-4">
+                <x-nav.item>
+                    <x-nav.link href="#" active>
+                        Active
+                    </x-nav.link>
+                </x-nav.item>
+                
+                <x-nav.item>
+                    <x-nav.link href="#" id="nav-link">
+                        Link
+                    </x-nav.link>
+                </x-nav.item>
+                
+                <x-nav.item>
+                    <x-nav.link href="#">
+                        Link
+                    </x-nav.link>
+                </x-nav.item>
+                
+                <x-nav.item>
+                    <x-nav.link href="#" disabled>
+                        Disabled
+                    </x-nav.link>
+                </x-nav.item>
+            </x-nav>
+            
+            <x-nav pills fill class="mt-4">
+                <x-nav.item>
+                    <x-nav.link href="#" active>
+                        Active
+                    </x-nav.link>
+                </x-nav.item>
+                
+                <x-nav.item>
+                    <x-nav.link href="#" id="nav-link">
+                        Link
+                    </x-nav.link>
+                </x-nav.item>
+                
+                <x-nav.item>
+                    <x-nav.link href="#">
+                        Link
+                    </x-nav.link>
+                </x-nav.item>
+                
+                <x-nav.item>
+                    <x-nav.link href="#" disabled>
+                        Disabled
+                    </x-nav.link>
+                </x-nav.item>
+            </x-nav>
+            
+            <x-nav pills justified class="mt-4">
+                <x-nav.item>
+                    <x-nav.link href="#" active>
+                        Active
+                    </x-nav.link>
+                </x-nav.item>
+                
+                <x-nav.item>
+                    <x-nav.link href="#" id="nav-link">
+                        Link
+                    </x-nav.link>
+                </x-nav.item>
+                
+                <x-nav.item>
+                    <x-nav.link href="#">
+                        Link
+                    </x-nav.link>
+                </x-nav.item>
+                
+                <x-nav.item>
+                    <x-nav.link href="#" disabled>
+                        Disabled
+                    </x-nav.link>
+                </x-nav.item>
+            </x-nav>
             
         </x-layout.col>
     </x-layout.row>
